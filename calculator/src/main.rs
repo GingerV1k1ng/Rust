@@ -10,6 +10,11 @@ fn main() {
 
         io::stdin().read_line(&mut variable1)
             .expect("Failed to read line");
+
+        let variable1: f64 = match variable1.trim().parse(){
+            Ok(num) => num,
+            Err(_) => continue,
+        };
         
         println!("Please input your second number");
 
@@ -17,11 +22,6 @@ fn main() {
 
         io::stdin().read_line(&mut variable2)
             .expect("Failed to read line");
-        
-        let variable1: f64 = match variable1.trim().parse(){
-            Ok(num) => num,
-            Err(_) => continue,
-        };
             
         let variable2: f64 = match variable2.trim().parse(){
             Ok(num) => num,
@@ -41,13 +41,17 @@ fn main() {
         };
 
         if operation == "plus"{
-            plus(&variable1, &variable2);
+            let result = plus(&variable1, &variable2);
+            println!("The result is {}",result);
         } else if operation == "minus"{
-            minus(&variable1, &variable2);
+            let result = minus(&variable1, &variable2);
+            println!("The result is {}",result);
         } else if operation == "devide"{
-            devide(&variable1, &variable2);
+            let result = devide(&variable1, &variable2);
+            println!("The result is {}",result);
         } else if operation == "times"{
-            times(&variable1, &variable2);
+            let result = times(&variable1, &variable2);
+            println!("The result is {}",result);
         } else{
             println!("Please choose plus, minus, devide, times");
         }
