@@ -18,10 +18,10 @@ fn main() {
         
         let (variable1, variable2): (f64, f64) = 
             match (variable1.trim().parse(), variable2.trim().parse()){
-                (Ok(num1),Ok(num2)) => (num1,num2),
-                (Err(_1), Err(_2))  => continue,
-                (Ok(num1), Err(_2)) => continue,
-                (Err(_1), Ok(num2)) => continue,
+                (Ok(num1),Ok(num2))  => (num1,num2),
+                (Err(_1), Err(_2))   => continue,
+                (Ok(_num1), Err(_2)) => continue,
+                (Err(_1), Ok(_num2)) => continue,
         };
 
         println!("What opperation you want to use? +,-,/ or *?");
