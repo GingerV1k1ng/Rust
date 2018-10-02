@@ -4,9 +4,9 @@ fn main() {
     println!("Calculate something!");
 
     loop {
-        println!("Please input your first number");
-        
         let (mut variable1, mut variable2) = (String::new(), String::new());
+
+        println!("Please input your first number");
 
         io::stdin().read_line(&mut variable1)
             .expect("Failed to read line");
